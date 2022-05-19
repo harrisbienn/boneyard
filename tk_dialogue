@@ -1,0 +1,27 @@
+# Define root and specify file path for downloaded .geojson representing bounds of grid generation area
+root = tk.Tk()
+#root.withdraw()
+root.title('Open File Dialog')
+root.resizable(False, False)
+root.geometry('300x150')
+
+def select_file():
+    filetypes = (
+        ('GeoJSON files', '*.geojson'),
+    )
+
+    filename = filedialogue.askopenfilename(
+        title='Select the .geojson you want to use as input',
+        initialdir='/',
+        filetypes=filetypes)
+
+    showinfo(
+        title='Selected File',
+        message=filename
+    )
+    
+file_path = filedialog.askopenfilename(
+    title='Select the .geojson you want to use')
+    
+print(file_path)
+input('Press any key to exit')
